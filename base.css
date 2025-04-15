@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    /* border-bottom: 1px solid #ccc; */
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+    gap: 1rem;
+    z-index: 1;
+}
+
+/* Brand on left */
+.brand {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Navigation styling */
+nav {
+    /* On desktop we'll let nav display inline */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: linear .25s;
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+nav ul li a:hover {
+    color: #A65C5C;
+}
+
+nav .delimiter {
+    user-select: none;
+}
+
+/* Hamburger toggle setup */
+/* Hide the checkbox, we only use it for toggling state */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    /* Show hamburger only on mobile */
+    .hamburger {
+        display: block;
+    }
+
+    nav .delimiter {
+        display: none;
+    }
+
+    /* Hide nav by default on mobile */
+    nav {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 5px 0;
+    }
+
+    header {
+        justify-content: space-between;
+        background: rgb(255, 255, 255);
+    }
+
+    /* When checkbox is checked, show the nav */
+    #menu-toggle:checked+.hamburger+nav {
+        display: block;
+    }
+}
+
+.landing {
+    position: relative;
+    height: 100vh;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, white 100%),
+        url('https://picsum.photos/1920/1080') center/cover no-repeat; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: .25rem;
+    overflow: hidden;
+}
+
+.landing h1 {
+    font-size: 3em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.content {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+}
+
+.main {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 5rem;
+}
+
+.quote {
+    font-weight: bold;
+    padding: 1rem;
+    background: linear-gradient(90deg, silver, 1%, white);
+}
+
+.emerge {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.emerge-longer1 {
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.emerge-longer2 {
+    transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+}
+
+.emerge-longer3 {
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.emerge-longer4 {
+    transition: opacity 1.4s ease-out, transform 1.4s ease-out;
+}
+
+.emerge-longer5 {
+    transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+}
+
+.emerge.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.active-link {
+    color: #A65C5C;
+}
+
+.next-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.next-button:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.next-button span {
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.next-button-container {
+    display: flex;
+    flex-direction: row-reverse;
+}

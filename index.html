@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Головна</title>
+    <link rel="stylesheet" href="base.css">
+    <style>
+        #myVideo {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .landing-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+            pointer-events: none;
+        }
+
+        .landing-title {
+            font-size: 39px;
+            color: #2D2D2D;
+            max-width: 18rem;
+            text-shadow: 0px 0px 20px white;
+            line-height: 1.1em;
+            letter-spacing: 0.05em;
+        }
+
+        .landing-title-bottom {
+            font-size: 16px;
+            font-family: montserrat;
+            color: #2D2D2D;
+            text-shadow: 0px 0px 20px white;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            /* 16:9 aspect ratio */
+            /* padding-bottom: 56.25%; */
+            padding-bottom: 70%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .photos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #dbdbdb88;
+            gap: 1.5rem;
+        }
+
+        .photo {
+            width: 245px;
+            height: 222px;
+            object-fit: cover;
+        }
+
+        .photo-and-description {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 245px;
+        }
+
+        .photo-description-span {
+            color: #411E06;
+        }
+
+        .photo-description-link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .photo-description-link:hover {
+            color: #411E06;
+        }
+
+        .photo-description-span,
+        .photo-description-link {
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .iframe-container {
+                padding-bottom: 100%;
+            }
+
+            .photo-and-description,
+            .photo {
+                width: 90vw;
+            }
+
+            .photo {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#topEl" class="brand">Головна</a>
+        <!-- Hidden checkbox to toggle menu -->
+        <input type="checkbox" id="menu-toggle">
+        <!-- Hamburger icon (appears only on mobile) -->
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="page2.html">Журналістика: ідеали vs реальність</a></li>
+                <li><a href="page3.html">Еволюція медіа</a></li>
+                <li><a href="page4.html">Журналістика майбутнього</a></li>
+                <li><a href="page4.html#secondSection">Поради для майбутніх журналістів</a></li>
+                <li class="delimiter"><span>|</span></li>
+                <li><a href="#journalists">Журналісти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="landing" id="topEl">
+        <video autoplay muted loop id="myVideo" class="parallax">
+            <source src="content/2_c.mp4" type="video/mp4">
+        </video>
+        <span class="landing-title">Про журналістику від журналістів</span>
+        <div style="width: 12rem; border: solid; border-color: #2D2D2D; border-bottom: 1px;"></div>
+        <span class="landing-title-bottom emerge">by Valeriia Fedorenko</span>
+    </section>
+
+    <div class="main">
+        <article class="content">
+            <p class="emerge">Журналістика — це не просто засіб передачі інформації, а дзеркало суспільства, що
+                відображає його
+                найглибші
+                реалії, конфлікти та виклики сьогодення. Вона не лише формує громадську думку, а й розповідає історії,
+                розкриває правду та змушує критично переосмислювати усталені уявлення.</p>
+            <br>
+            <p class="emerge">Ще півстоліття тому журналістика існувала в межах традиційних медіа — телебачення, радіо,
+                друкованих
+                газет і
+                журналів. Однак цифрова революція змінила правила гри: інтернет, соціальні мережі та цифрові платформи
+                зруйнували усталені моделі. Сьогодні інформація поширюється миттєво, а роль журналіста змістилася — з
+                ексклюзивного постачальника новин він став медіапровідником, що допомагає відокремити факти від
+                маніпуляцій
+                у безмежному потоці даних.</p>
+            <br>
+            <p class="emerge">Проте разом зі змінами постають і нові виклики: етичні дилеми, знецінення професії через
+                масове поширення
+                фейків, жорстка конкуренція на медіаринку. В Україні ці труднощі посилює війна, що не лише ускладнює
+                роботу
+                журналістів, а й перетворює їх на хронікерів історії.</p>
+            <br>
+
+            <div class="iframe-container emerge">
+                <iframe
+                    src="https://www.google.com/maps/d/u/0/embed?mid=1q4wElUM6zYPWXWI__nGv5-AVQKIMpDY&ehbc=2E312F&noprof=1"
+                    style="border:0;" allowfullscreen loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <br>
+
+            <p class="emerge">Сучасна журналістика стрімко змінюється під впливом диджиталізації. Технології не лише
+                трансформують
+                формати
+                подачі новин, а й змінюють саму природу професії. Зростає роль алгоритмів і платформ-агрегаторів, що
+                конкурують із традиційними медіа.</p>
+            <br>
+
+            <p class="quote emerge">Станом на 2025 р. у Дніпрі працює 4 телекомпанії. Для порівняння, 3 роки тому, до
+                початку
+                великої війни,
+                телеканалів міського рівня було вдвічі більше – 8.</p>
+            <br>
+
+            <p class="emerge">Водночас посилюється тенденція до конвергенції, коли різні медіаформати інтегруються, а
+                журналісти
+                працюють
+                у багатофункціональних командах.</p>
+            <br>
+
+            <p class="emerge">Ще один важливий тренд — пріоритет швидкості над глибиною аналізу. Постійний тиск
+                дедлайнів і очікування
+                миттєвих оновлень змінили традиційні підходи до створення контенту, що впливає на якість і етичні
+                стандарти.
+                У таких умовах журналісти змушені не лише адаптуватися до нових реалій, а й шукати баланс між
+                оперативністю
+                та достовірністю.</p>
+            <br>
+
+            <p class="emerge">Щоб краще зрозуміти, як журналісти працюють в умовах сучасних викликів, ми поспілкувалися
+                з працівниками
+                локальних та національних медіа. Своїм досвідом поділилися редакторка новинного сайту «Наше місто»
+                Тетяна
+                Захарова, журналістка «Суспільне Дніпро» Ірина Руденко, телеведуча каналу D1 Маргарита Кузьменко,
+                редакторка
+                стрічки новин OBOZREVATEL Софія Закревська та журналістка «Інформатор Дніпро» Олена Бурцева. Вони
+                розповіли,
+                які навички допомагають їм залишатися конкурентоспроможними, як технології змінюють журналістику та з
+                якими
+                викликами стикається професія сьогодні.</p>
+            <br>
+            <div class="next-button-container">
+                <a href="page2.html" class="next-button emerge">
+                    Далі <span>→</span>
+                </a>
+            </div>
+        </article>
+        <div class="photos-container emerge" id="journalists">
+            <div class="photo-and-description emerge emerge-longer1">
+                <img class="photo" src="content/3.avif" />
+                <span class="photo-description-span">Редакторка новинного сайту «Наше місто»</span>
+                <a href="https://www.facebook.com/tanya.zaharova.33?locale=uk_UA" class="photo-description-link">Тетяна
+                    Захарова</a>
+            </div>
+            <div class="photo-and-description emerge emerge-longer2">
+                <img class="photo" src="content/7.avif" />
+                <span class="photo-description-span">Журналістка «Суспільне Дніпро»</span>
+                <a href="https://www.instagram.com/iirysja?igsh=bW9sbHp1YmJjaXd3" class="photo-description-link">Ірина
+                    Руденко</a>
+            </div>
+            <div class="photo-and-description emerge emerge-longer3">
+                <img class="photo" src="content/6.avif" />
+                <span class="photo-description-span">Телеведуча каналу D1</span>
+                <a href="https://www.instagram.com/_viomar_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="photo-description-link">Маргарита Кузьменко</a>
+            </div>
+            <div class="photo-and-description emerge emerge-longer4">
+                <img class="photo" src="content/4.avif" />
+                <span class="photo-description-span">Редакторка стрічки новин OBOZREVATEL</span>
+                <a href="https://www.instagram.com/me_zakrevskaya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="photo-description-link">Софія Закревська</a>
+            </div>
+            <div class="photo-and-description emerge emerge-longer5">
+                <img class="photo" src="content/5.avif" />
+                <span class="photo-description-span">Журналістка «Інформатор Дніпро» Олена Бурцева</span>
+                <a href="https://www.facebook.com/profile.php?id=100011479998082&locale=uk_UA"
+                    class="photo-description-link">Олена Бурцева</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
