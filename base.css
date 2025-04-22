@@ -231,3 +231,44 @@ p {
     display: flex;
     flex-direction: row-reverse;
 }
+
+footer {
+    width: 100%;
+    background-color: #dbdbdb;
+    color: #333;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.footer-block {
+    flex: 1 1;
+    max-width: 400px;
+    padding: 0 10px;
+    font-size: 12px;
+    font-family: montserrat;
+}
+
+.footer-separator {
+    display: inline;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+}
